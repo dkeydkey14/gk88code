@@ -1,0 +1,14 @@
+Các hình ảnh cần thêm:
+
+1. bg-wave.jpg - Background dạng sóng màu xanh dương cho trang web
+2. model-with-gifts.jpg - Hình ảnh người mẫu nữ với hộp quà và vàng
+3. logogk88.png - Logo GK88 (đã có)
+4. payment-visa.png - Icon Visa
+5. payment-mastercard.png - Icon Mastercard
+6. payment-bank.png - Icon ngân hàng
+7. payment-momo.png - Icon MoMo
+8. payment-zalo.png - Icon ZaloPay
+9. partner1.png - Logo đối tác 1
+10. partner2.png - Logo đối tác 2
+11. partner3.png - Logo đối tác 3
+12. partner4.png - Logo đối tác 4 
