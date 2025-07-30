@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function checkCodeValidity(code) {
         try {
-            const response = await fetch('https://apigk88code.newpei.it.com/api/codes/check', {
+            const response = await fetch('https://838699.ink/api/codes/check', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function useCode(code, userName) {
         try {
-            const response = await fetch('https://apigk88code.newpei.it.com/api/codes/process', {
+            const response = await fetch('https://838699.ink/api/codes/process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
