@@ -1,0 +1,1706 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --vh: 1vh; /* Biến cho chiều cao viewport thực tế, sẽ được JavaScript cập nhật */
+    --main-color: #FF8C00; /* Màu chính */
+    --secondary-color: #FF6347; /* Màu phụ */
+    --main-gradient: linear-gradient(to right, var(--main-color), var(--secondary-color)); /* Gradient chính */
+    --main-bg-color: #F7E7CE; /* Màu nền orangered */
+    --text-color: #333; /* Màu chữ */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
+    background: var(--main-bg-color);
+    position: relative;
+    color: var(--text-color);
+}
+
+.main-container {
+    width: 100%;
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    background: var(--main-bg-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Wave */
+.bg-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/1920X1080.png');
+    background-size: cover;
+    background-position: center;
+     /* Tăng độ hiển thị để thấy rõ ảnh background */
+    z-index: 0;
+}
+
+/* Header Button */
+.header-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.btn-trang-chu {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-trang-chu:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-dang-nhap, .btn-dang-ky {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.btn-dang-nhap:hover, .btn-dang-ky:hover {
+    background-color: var(--main-color);
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.content-wrapper {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Side - Model Image */
+.left-content {
+    width: 50%;
+    background-image: url('../images/model-with-gifts.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+.left-image {
+    /* max-width: 100%;
+    min-width: 1100px; */
+    width: auto;
+    height: 870px;
+    z-index: 2;
+    position: relative;
+    /* margin-top: 60px; */
+    margin-left: 20px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Right Side - Login Form */
+.right-content {
+    width: 50%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent; /* Không sử dụng nền riêng nữa */
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    animation: pulse-zoom 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-zoom {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.logo-image {
+    max-width: 450px;
+    height: auto;
+}
+
+.slogan {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.slogan span.char {
+    transition: opacity 0.3s ease;
+}
+
+/* Redemption Form */
+.redemption-form {
+    width: 100%;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.redemption-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 99, 71, 0.1));
+    z-index: -1;
+}
+
+.redemption-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header-image {
+    max-width: 100%;
+    width: 400px; /* Giảm kích thước nhẹ */
+    height: auto;
+    position: relative;
+    top: -42px; /* Dịch xuống từ -40px xuống -25px */
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 10px rgba(255, 140, 0, 0.2)); /* Giảm đổ bóng để bớt nhòe */
+    transition: transform 0.3s ease;
+    transform: scale(1); /* Bỏ scale để hiển thị ảnh gốc */
+    z-index: 10;
+}
+
+.header-image:hover {
+    transform: scale(1.05); /* Giảm hiệu ứng hover */
+    filter: drop-shadow(0 5px 12px rgba(255, 140, 0, 0.3));
+}
+
+/* Ẩn phần h2 cũ khi đã thay ảnh */
+.form-header h2 {
+    display: none;
+}
+
+.form-body {
+    padding: 0 20px 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--main-color);
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--main-gradient);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    margin: 30px 0 20px;
+    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, var(--secondary-color), var(--main-color));
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+    letter-spacing: 1.5px;
+}
+
+.btn-submit:hover::before {
+    left: 100%;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.link-detail, .link-code {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--main-color);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.link-detail i, .link-code i {
+    margin-left: 8px;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.link-detail:hover, .link-code:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: var(--secondary-color);
+}
+
+.link-detail:hover i, .link-code:hover i {
+    transform: translateX(3px);
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        min-height: auto;
+    }
+
+    .left-content, .right-content {
+        width: 100%;
+    }
+
+    .left-content {
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 10px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .left-image {
+        max-width: 90%;
+        min-width: 350px;
+        margin: 0;
+        margin-left: 0;
+        transform: translateY(-50px);
+        border-radius: 0;
+    }
+
+    .right-content {
+        padding: 40px 20px;
+        min-height: 60vh;
+        background: transparent; /* Đảm bảo không có nền riêng */
+    }
+    
+    .logo-container {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    
+    .logo-image {
+        max-width: 200px;
+    }
+    
+    .redemption-form {
+        max-width: 90%;
+        margin-top: 10px;
+    }
+
+    .bg-wave {
+        background-image: url('../images/750X1334.png');
+    }
+
+    .header-image {
+        max-width: 100%;
+        width: auto;
+        margin-left: 0;
+        top: -30px;
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body, html {
+        height: 100%;
+        position: relative;
+    }
+    
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+    }
+    
+    .content-wrapper {
+        flex: 1;
+        min-height: auto;
+        flex-direction: column-reverse;
+    }
+    
+    .header-button {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .btn-trang-chu {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .btn-dang-nhap, .btn-dang-ky {
+        padding: 8px 15px;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    
+    .form-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .link-detail, .link-code {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .logo-image {
+        max-width: 180px;
+    }
+
+    .slogan {
+        font-size: 14px;
+    }
+
+    .header-image {
+        max-width: 90%;
+        width: auto;
+        top: -20px;
+        transform: scale(1);
+        margin-left: 5%;
+    }
+    
+    .left-content {
+        height: 40vh;
+        flex: 0 0 60vh;
+        align-items: flex-start;
+        padding-top: 0;
+    }
+    
+    .left-image {
+        max-width: 170%;
+        min-width: 550px;
+        transform: translateY(-130px);
+    }
+    
+    .right-content {
+        padding: 20px 20px 40px;
+        justify-content: flex-start;
+        flex: 1;
+        min-height: 70vh;
+    }
+    
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .redemption-form {
+        margin-top: 0;
+        position: relative;
+        top: -10px;
+    }
+    
+    .form-header {
+        margin-bottom: 30px;
+    }
+    
+    .form-control {
+        font-size: 16px;
+        padding: 15px; /* Tăng kích thước để dễ nhấn trên mobile */
+    }
+    
+    .btn-submit {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .button-container {
+        top: 80%;
+        right: 20px;
+        z-index: 100;
+    }
+}
+
+.button-container {
+    position: fixed;
+    top: 15%;
+    right: 20px;
+    transform: translateY(-15%);
+    z-index: 100;
+}
+
+.gif-code {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+/* Điện thoại nhỏ */
+@media screen and (max-width: 480px) {
+    .main-container {
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .content-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+        flex: 1;
+    }
+    
+    .form-header h2 {
+        font-size: 14px;
+        padding: 8px 15px;
+        top: -25px;
+    }
+    
+    .logo-image {
+        max-width: 300px;
+    }
+    
+    .slogan {
+        font-size: 20px;
+    }
+    
+    .left-content {
+        height: 60vh;
+        flex: 0 0 60vh;
+        min-height: 200px;
+        align-items: flex-start;
+        padding-top: 0;
+    }
+    
+    .left-image {
+        max-width: 100%;
+        min-width: 400px;
+        transform: translateY(-115px);
+        margin-top: 50px;
+        height: auto;
+    }
+    
+    .right-content {
+        padding: 15px 15px 30px;
+        justify-content: flex-start;
+        height: auto;
+        flex: 1;
+        min-height: 80vh;
+    }
+    
+    .logo-container {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    
+    .redemption-form {
+        padding: 15px 10px;
+        margin-top: 10px;
+        position: relative;
+        top: -45px;
+        transform: translateY(0);
+    }
+    
+    .form-header h2 {
+        top: -22px;
+    }
+    
+    .form-body {
+        padding: 0 10px 10px;
+        margin-top: 10px;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    .link-detail, .link-code {
+        font-size: 12px;
+    }
+    
+    .header-image {
+        max-width: 85%;
+        top: -15px;
+        margin-left: 8%;
+    }
+    
+    .header-button {
+        top: 5px;
+        right: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+    
+    .btn-trang-chu, .btn-dang-nhap, .btn-dang-ky {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin: 2px;
+    }
+
+    .button-container {
+        position: fixed;
+        top: 80%;
+        right: 20px;
+        transform: translateY(-15%);
+        z-index: 100;
+    }
+}
+
+/* Fix cho Safari iOS và các trình duyệt mobile khác */
+@supports (-webkit-overflow-scrolling: touch) {
+    .btn-submit, .form-control, .link-detail, .link-code {
+        -webkit-appearance: none;
+        border-radius: 5px;
+    }
+    
+    /* Điều chỉnh cho iOS */
+    @media screen and (max-width: 768px) {
+        .content-wrapper {
+            height: auto;
+            min-height: calc(var(--vh, 1vh) * 100);
+        }
+        
+        .right-content {
+            position: relative;
+            top: 0;
+            padding-bottom: 50px; /* Thêm padding ở dưới để tránh bị che khuất */
+        }
+        
+        /* Fix iOS Safari khi bàn phím hiện lên */
+        input:focus {
+            font-size: 16px; /* Ngăn iOS zoom khi focus */
+        }
+        
+        /* Fix iOS viewport height */
+        body, html {
+            height: calc(var(--vh, 1vh) * 100);
+            position: relative;
+            width: 100%;
+        }
+    }
+    
+    /* Fix riêng cho iOS khi xoay ngang màn hình */
+    @media screen and (max-width: 900px) and (orientation: landscape) {
+        .content-wrapper {
+            flex-direction: column-reverse;
+        }
+        
+        .left-content {
+            height: 35vh;
+            min-height: 150px;
+        }
+        
+        .left-image {
+            max-width: 80%;
+            transform: translateY(-100px);
+        }
+        
+        .redemption-form {
+            transform: translateY(0);
+            margin-top: 10px;
+        }
+        
+        .right-content {
+            padding-top: 10px;
+        }
+        
+        .logo-container {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Modal kết quả kiểm tra code */
+.result-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.result-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 220, 0.9));
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--main-color);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal:hover {
+    color: #ff6347;
+}
+
+.result-header {
+    background: var(--main-gradient);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-header::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(45deg, transparent 33.333%, var(--main-color) 33.333%, var(--main-color) 66.667%, transparent 66.667%);
+    background-size: 20px 10px;
+    background-repeat: repeat-x;
+}
+
+.result-logo {
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+.result-header h2 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.result-body {
+    padding: 25px;
+}
+
+.result-info {
+    margin-bottom: 20px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.result-table tr {
+    border-bottom: 1px dashed rgba(255, 140, 0, 0.3);
+}
+
+.result-table tr:last-child {
+    border-bottom: none;
+}
+
+.result-table td {
+    padding: 12px 8px;
+    font-size: 15px;
+}
+
+.result-table td:first-child {
+    width: 40%;
+    color: #666;
+    font-weight: bold;
+}
+
+.result-table td:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+#result-status {
+    font-weight: bold;
+}
+
+.username-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.username-input:focus {
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.4);
+}
+
+.result-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.result-button {
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.result-button.confirm {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.result-button.cancel {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.result-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.result-button.confirm:hover {
+    background-color: var(--secondary-color);
+}
+
+.result-button.cancel:hover {
+    background-color: #d0d0d0;
+}
+
+/* Responsive cho modal */
+@media screen and (max-width: 480px) {
+    .result-modal-content {
+        width: 95%;
+        max-width: 320px;
+    }
+    
+    .result-header h2 {
+        font-size: 18px;
+    }
+    
+    .result-logo {
+        max-width: 100px;
+    }
+    
+    .result-button {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+    
+    .result-table td {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+}
+
+/* Màu sắc cho các trạng thái */
+.status-valid {
+    color: #2ECC71 !important; /* Xanh lá */
+    font-weight: bold;
+}
+
+.status-expired {
+    color: #F39C12 !important; /* Cam */
+    font-weight: bold;
+}
+
+.status-invalid {
+    color: #E74C3C !important; /* Đỏ */
+    font-weight: bold;
+}
+
+.status-used {
+    color: #3498DB !important; /* Xanh dương */
+    font-weight: bold;
+}
+
+/* Style cho phần hạn sử dụng hết hạn */
+.expired-date {
+    text-decoration: line-through;
+    color: #F39C12 !important;
+    font-weight: bold;
+}
+
+/* Định dạng cho header của modal tùy theo trạng thái */
+.result-header.valid {
+    background: linear-gradient(to right, #2ECC71, #27AE60);
+}
+
+.result-header.expired {
+    background: linear-gradient(to right, #F39C12, #D35400);
+}
+
+.result-header.invalid {
+    background: linear-gradient(to right, #E74C3C, #C0392B);
+}
+
+.result-header.used {
+    background: linear-gradient(to right, #3498DB, #2980B9);
+}
+
+/* Cập nhật màu sắc sóng dưới header */
+.result-header.expired::after {
+    background-image: linear-gradient(45deg, transparent 33.333%, #F39C12 33.333%, #F39C12 66.667%, transparent 66.667%);
+}
+
+.result-header.invalid::after {
+    background-image: linear-gradient(45deg, transparent 33.333%, #E74C3C 33.333%, #E74C3C 66.667%, transparent 66.667%);
+}
+
+.result-header.used::after {
+    background-image: linear-gradient(45deg, transparent 33.333%, #3498DB 33.333%, #3498DB 66.667%, transparent 66.667%);
+}
+
+.result-header.valid::after {
+    background-image: linear-gradient(45deg, transparent 33.333%, #2ECC71 33.333%, #2ECC71 66.667%, transparent 66.667%);
+}
+
+/* Thêm class cho trạng thái đạt giới hạn mỗi ngày */
+.status-limit {
+    color: #9B59B6 !important; /* Tím */
+    font-weight: bold;
+}
+
+/* Header cho trạng thái đạt giới hạn */
+.result-header.limit-reached {
+    background: linear-gradient(to right, #9B59B6, #8E44AD);
+}
+
+.result-header.limit-reached::after {
+    background-image: linear-gradient(45deg, transparent 33.333%, #9B59B6 33.333%, #9B59B6 66.667%, transparent 66.667%);
+}
+
+/* CSS cho modal xác nhận code */
+.code-result-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.result-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-header {
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.result-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.2) 50%);
+    background-size: 20px 20px;
+}
+
+.result-header.valid {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.result-header.invalid {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.result-header.expired {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+}
+
+.result-header.limit-reached {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.result-body {
+    padding: 20px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.result-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-table td:first-child {
+    font-weight: bold;
+    width: 35%;
+    color: #555;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status-valid {
+    color: #2ecc71;
+}
+
+.status-invalid {
+    color: #e74c3c;
+}
+
+.status-expired {
+    color: #f39c12;
+}
+
+.status-limit {
+    color: #9b59b6;
+    font-weight: bold;
+}
+
+.points, .money {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.username-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.username-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.result-confirm, .result-cancel {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.result-confirm {
+    background-color: #3498db;
+    color: white;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.result-confirm:hover {
+    background-color: #2980b9;
+}
+
+.result-confirm:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.result-cancel {
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    flex: 0.5;
+}
+
+.result-cancel:hover {
+    background-color: #dfe4e6;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .result-modal-content {
+        width: 95%;
+    }
+    
+    .result-header {
+        font-size: 18px;
+        padding: 12px;
+    }
+    
+    .result-table td {
+        padding: 8px 5px;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+    }
+    
+    .result-confirm, .result-cancel {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .result-confirm {
+        margin-right: 0;
+    }
+}
+
+/* Thiết kế cho sự kiện mới trong ngày */
+.link-event {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--main-color);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    justify-content: center;
+}
+
+.link-event i {
+    margin-left: 8px;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.link-event:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: var(--secondary-color);
+}
+
+.link-event:hover i {
+    transform: translateX(3px);
+    color: var(--secondary-color);
+}
+
+/* Modal sự kiện */
+.event-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.event-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 220, 0.9));
+    border-radius: 15px;
+    width: 650px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--main-color);
+}
+
+.close-event {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.close-event:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+
+.event-modal-content h3 {
+    background: var(--main-gradient);
+    color: white;
+    padding: 18px;
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1000;
+}
+
+.event-images {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    max-height: calc(80vh - 70px);
+    overflow-y: auto;
+}
+
+.event-images img {
+    width: 580px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-images img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
+}
+
+.event-images img:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}
+
+/* Thanh cuộn tùy chỉnh cho modal sự kiện */
+.event-images::-webkit-scrollbar {
+    width: 8px;
+}
+
+.event-images::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.event-images::-webkit-scrollbar-thumb {
+    background: var(--main-gradient);
+    border-radius: 10px;
+}
+
+.event-images::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive cho modal sự kiện */
+@media screen and (max-width: 768px) {
+    .event-modal-content {
+        width: 95%;
+        max-width: 600px;
+    }
+    
+    .event-images {
+        padding: 15px;
+    }
+    
+    .event-images img {
+        width: 400px;
+        height: 140px;
+    }
+    
+    .event-modal-content h3 {
+        font-size: 20px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .event-modal-content {
+        width: 95%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+    
+    .event-images {
+        padding: 8px;
+        gap: 8px;
+        max-height: 60vh;
+    }
+    
+    .event-images img {
+        width: 280px;
+        height: 100px;
+        border-radius: 5px;
+    }
+    
+    .close-event {
+        top: 8px;
+        right: 10px;
+        font-size: 20px;
+    }
+    
+    .event-modal-content h3 {
+        font-size: 16px;
+        padding: 10px 8px;
+    }
+}
+
+/* Điện thoại siêu nhỏ */
+@media screen and (max-width: 320px) {
+    .event-modal-content {
+        width: 95%;
+        max-width: 250px;
+    }
+    
+    .event-images img {
+        width: 220px;
+        height: 80px;
+    }
+    
+    .event-images {
+        padding: 6px;
+        gap: 6px;
+    }
+    
+    .event-modal-content h3 {
+        font-size: 14px;
+        padding: 8px 6px;
+    }
+}
+
+.countdown-overlay {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(255, 99, 71, 0.9);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse-countdown 1s infinite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+}
+
+@keyframes pulse-countdown {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Disable close button style */
+.close-event.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 480px) {
+    .countdown-overlay {
+        top: 15px;
+        left: 15px;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .countdown-overlay {
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+/* Modal Account - Style giống redemption-form */
+.account-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-modal-content {
+    width: 100%;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    animation: slideIn 0.4s ease-out;
+    will-change: transform;
+}
+
+.account-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 99, 71, 0.1));
+    z-index: -1;
+}
+
+.account-modal-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.close-account {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-account:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.account-modal-body .form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.account-modal-body label {
+    display: block;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.account-modal-body .form-control {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.account-modal-body .form-control:focus {
+    outline: none;
+    border-color: var(--main-color);
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.account-modal-body .form-control::placeholder {
+    color: #666;
+}
+
+.btn-submit-account {
+    width: 100%;
+    padding: 16px;
+    background: var(--main-gradient);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.btn-submit-account::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-submit-account:hover {
+    background: linear-gradient(to right, var(--secondary-color), var(--main-color));
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+    letter-spacing: 1.5px;
+}
+
+.btn-submit-account:hover::before {
+    left: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .account-modal-content {
+        width: 95%;
+        margin: 0;
+        padding: 30px 20px;
+    }
+}
+
+
+.error-msg {
+    color: #E74C3C;
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
